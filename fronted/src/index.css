@@ -11,3 +11,127 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav-link{
+  margin-left: 40px;
+}
+
+#supportHero{
+  background-color: rgb(56, 126, 209);
+  color: white;
+}
+
+#supportHero a{
+  color: white;
+}
+
+#supportWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+
+#supportHero input{
+  padding: 20px 50px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+}
+.navbar {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  margin-left: 40px;
+  font-weight: 500;
+  color: #333 !important;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #387ed1 !important;
+}
+
+/* underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #387ed1;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+#supportHero {
+  background: linear-gradient(135deg, #387ed1, #5aa3ff);
+  color: white;
+  padding: 80px 0;
+}
+
+#supportHero a {
+  color: #e0eaff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#supportHero a:hover {
+  color: white;
+  text-decoration: underline;
+}
+#supportWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+  gap: 40px;
+}
+#supportHero input {
+  padding: 18px 25px;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+#supportHero input:focus {
+  box-shadow: 0 4px 25px rgba(56, 126, 209, 0.4);
+}
+body {
+  background-color: #f7f9fc;
+}
+/* Navbar fix + premium look */
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Content niche shift ho */
+body {
+  padding-top: 80px;
+}
+.nav-link {
+  margin-left: 40px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #387ed1 !important;
+}
