@@ -1,0 +1,947 @@
+/* Full dashboard container */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: rgb(233, 238, 245);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Left Menu (Sidebar) */
+.dashboard-container > *:nth-child(1) {
+  width: 220px;
+  background-color: #1e1e2f;
+  color: #fff;
+  border-right: 1px solid #2c2c3a;
+}
+
+/* Watchlist (Middle Panel) */
+.dashboard-container > *:nth-child(2) {
+  width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+/* Main Content Area */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+
+
+.chart-container {
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+/* Top funds section */
+.funds {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.funds p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Buttons */
+.btn {
+  padding: 7px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+/* Add funds (Green 📈) */
+.btn-green {
+  background-color: #00b386;
+  color: #fff;
+}
+
+.btn-green:hover {
+  background-color: #009973;
+}
+
+/* Withdraw / Action button */
+.btn-blue {
+  background-color: #3399ff;
+  color: #fff;
+}
+
+.btn-blue:hover {
+  background-color: #267acc;
+}
+
+/* Layout row */
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+/* Columns */
+.col {
+  flex: 1;
+}
+
+/* Table container */
+.table {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Each data row */
+.data {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Important numbers */
+.imp {
+  font-weight: 600;
+}
+
+/* Highlight (Available margin) */
+.colored {
+  color: #00b386;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+}
+
+/* Commodity section */
+.commodity {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.commodity p {
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 14px;
+}
+
+
+
+/* Smooth popup animation */
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Title */
+.title {
+  font-size: 1px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Table container */
+.order-table {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* Table header */
+th {
+  text-align: left;
+  padding: 10px;
+  color: #666;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+
+/* Table rows */
+td {
+  padding: 10px;
+  border-bottom: 1px solid #f2f2f2;
+  color: #333;
+}
+
+/* Hover effect */
+tr:hover {
+  background-color: #f9fbfd;
+}
+
+/* Profit (Green 📈) */
+.profit {
+  color: #00b386;
+  font-weight: 500;
+}
+
+/* Loss (Red 📉) */
+.loss {
+  color: #ff4d4d;
+  font-weight: 500;
+}
+
+/* Bottom summary row */
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+/* Summary cards */
+.row .col {
+  flex: 1;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Summary values */
+.row .col h5 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.row .col h5 span {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Labels */
+.row .col p {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+
+
+
+/* Sidebar container */
+.menu-container {
+  width: 220px;
+  height: 100vh;
+  background-color: #1e1e2f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+
+/* Logo */
+.menu-container img {
+  margin-bottom: 20px;
+}
+
+/* Menu wrapper */
+.menus {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Menu list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu item text */
+.menu {
+  padding: 12px 20px;
+  margin: 5px 10px;
+  border-radius: 6px;
+  color: #ccc;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Hover effect */
+.menu:hover {
+  background-color: #2a2a40;
+  color: #fff;
+}
+
+/* Active menu */
+.selected {
+  background-color: #00b386;
+  color: #fff;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1px solid #2c2c3a;
+  margin: 10px 0;
+}
+
+/* Profile section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Hover */
+.profile:hover {
+  background-color: #2a2a40;
+}
+
+/* Avatar circle */
+.avatar {
+  width: 35px;
+  height: 35px;
+  background-color: #00b386;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Username */
+.username {
+  font-size: 14px;
+  color: #ddd;
+}
+
+
+
+/* Main container */
+.orders {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Empty state box */
+.no-orders {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* Message text */
+.no-orders p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: #00b386;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Hover */
+.btn:hover {
+  background-color: #009973;
+}
+
+
+/* Title */
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Table container */
+.order-table {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* Header */
+th {
+  text-align: left;
+  padding: 10px;
+  color: #666;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+
+/* Rows */
+td {
+  padding: 10px;
+  border-bottom: 1px solid #f2f2f2;
+  color: #333;
+}
+
+/* Hover */
+tr:hover {
+  background-color: #f9fbfd;
+}
+
+/* Profit */
+.profit {
+  color: #00b386;
+  font-weight: 500;
+}
+
+/* Loss */
+.loss {
+  color: #ff4d4d;
+  font-weight: 500;
+}
+
+/* Username section */
+.username {
+  margin-bottom: 20px;
+}
+
+.username h6 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+}
+
+/* Section container */
+.section {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+/* Section title */
+.section span p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Data layout */
+.data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left side (main value) */
+.first h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+.first p {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Profit highlight */
+.profit {
+  color: #00b386;
+}
+
+/* Right side details */
+.second {
+  font-size: 13px;
+  color: #555;
+}
+
+.second p {
+  margin: 5px 0;
+}
+
+.second span {
+  float: right;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Inner divider */
+.data hr {
+  height: 40px;
+  border: none;
+  border-left: 1px solid #eee;
+  margin: 0 20px;
+}
+
+
+/* Topbar container */
+.topbar-container {
+  width: 100%;
+  height: 60px;
+  background: rgb(59, 148, 236);
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+/* Indices wrapper */
+.indices-container {
+  display: flex;
+  gap: 30px;
+}
+
+/* Each index block */
+.nifty,
+.sensex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f9fbfd;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* Index name */
+.index {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Points value */
+.index-points {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Percentage change */
+.percent {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Profit (Green 📈) */
+.percent.up {
+  color: #00b386;
+}
+
+/* Loss (Red 📉) */
+.percent.down {
+  color: #ff4d4d;
+}
+
+
+/* Chart container */
+.chart-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+/* Title (if used separately) */
+.chart-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Canvas wrapper */
+.chart-wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Tooltip style override (Chart.js custom class) */
+.chartjs-tooltip {
+  background: #1e1e2f !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  padding: 8px 10px !important;
+  font-size: 12px !important;
+}
+
+/* Legend spacing */
+canvas {
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chart-wrapper {
+    height: 250px;
+  }
+}
+
+
+
+/* Main watchlist container */
+.watchlist-container {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Search box */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.search {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  outline: none;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.search:focus {
+  border-color: #00b386;
+}
+
+/* count badge */
+.counts {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Watchlist items */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each stock item */
+.list li {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: 0.2s;
+  position: relative;
+}
+
+.list li:hover {
+  background-color: #f9fbfd;
+}
+
+/* stock name */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* name */
+.item p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* up / down colors */
+.up {
+  color: #00b386;
+}
+
+.down {
+  color: #ff4d4d;
+}
+
+/* info section */
+.itemInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+/* price */
+.price {
+  font-weight: 500;
+  color: #333;
+}
+
+/* percent */
+.percent {
+  color: #666;
+}
+
+/* ACTIONS POPUP */
+.actions {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+
+/* buttons */
+.actions button {
+  border: none;
+  padding: 5px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* buy */
+.buy {
+  background: #00b386;
+  color: #fff;
+}
+
+.buy:hover {
+  background: #009973;
+}
+
+/* sell */
+.sell {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+.sell:hover {
+  background: #e60000;
+}
+
+/* neutral buttons */
+.action {
+  background: #f0f0f0;
+}
+
+.action:hover {
+  background: #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  /* Sidebar top pe aa jayega */
+  .dashboard-container > *:nth-child(1) {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Watchlist full width */
+  .dashboard-container > *:nth-child(2) {
+    width: 100%;
+    height: 250px;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* Mobile view */
+@media (max-width: 768px) {
+
+  /* Sidebar collapse type */
+  .menu-container {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .menus {
+    flex-direction: row;
+    height: auto;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .menu {
+    white-space: nowrap;
+  }
+
+  /* Watchlist */
+  .watchlist-container {
+    padding: 8px;
+  }
+
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Tables scrollable */
+  .order-table {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  /* Topbar wrap */
+  .indices-container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Funds section */
+  .funds {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Buttons adjust */
+  .btn {
+    margin-left: 0;
+  }
+}
+
+
+/* Small mobile */
+@media (max-width: 480px) {
+
+  .content {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .chart-wrapper {
+    height: 200px;
+  }
+
+  .no-orders {
+    padding: 20px;
+  }
+
+  .data {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .second span {
+    float: none;
+  }
+}

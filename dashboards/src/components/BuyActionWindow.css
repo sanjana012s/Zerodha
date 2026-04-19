@@ -1,0 +1,94 @@
+/* Main container */
+#buy-window {
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  font-family: "Segoe UI", sans-serif;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  z-index: 1000;
+}
+
+/* Order section */
+.regular-order {
+  margin-bottom: 15px;
+}
+
+/* Inputs container */
+.inputs {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+/* Fieldset styling */
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  flex: 1;
+}
+
+/* Legend (Qty, Price label) */
+legend {
+  font-size: 12px;
+  color: #666;
+  padding: 0 5px;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Buttons section */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Margin text */
+.buttons span {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Button common style */
+.btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Buy button (Green = Profit vibe 📈) */
+.btn-blue {
+  background-color: #00b386;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-blue:hover {
+  background-color: #009973;
+}
+
+/* Cancel button (Neutral grey) */
+.btn-grey {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-grey:hover {
+  background-color: #c7c7c7;
+}
