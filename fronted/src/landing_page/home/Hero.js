@@ -1,4 +1,5 @@
 import React from 'react';
+
 function Hero() {
   return (
     <div className="bg-light py-5">
@@ -7,7 +8,7 @@ function Hero() {
         {/* Image */}
         <img
           src="/media/images/homeHero.png"
-          alt="Hero"
+          alt="Hero Image"  
           className="img-fluid mb-5"
           style={{ maxWidth: "1000px" }}
         />

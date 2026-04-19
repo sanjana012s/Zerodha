@@ -1,37 +1,28 @@
 import React from "react";
-// import {
-//   Chart as ChartJS,
-//   CategoryScale,
-//   LinearScale,
-//   BarElement,
-//   Title,
-//   Tooltip,
-//   Legend,
-// } from "chart.js";
-// import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-// ChartJS.register(
-//   CategoryScale,
-//   LinearScale,
-//   BarElement,
-//   Title,
-//   Tooltip,
-//   Legend
-// );
+import { Bar } from "react-chartjs-2";
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top",
-    },
-    title: {
-      display: true,
-      text: "Holdings",
-    },
-  },
+// register chart components
+ChartJS.register(
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Tooltip,
+  Legend
+);
+
+export const VerticalGraph = ({ data }) => {
+  return (
+    <div style={{ width: "80%", margin: "auto" }}>
+      <Bar data={data} />
+    </div>
+  );
 };
-
-export function VerticalGraph({ data }) {
-  return <div>Bar Chart Placeholder</div>;
-}
